@@ -19,9 +19,11 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 public class JmsBootApplication {
 
   
+    public static final String SAMPLE_QUEUE = "sample.queue";
+
     @Bean
     public Queue queue() {
-        return new ActiveMQQueue("sample.queue");
+        return new ActiveMQQueue(SAMPLE_QUEUE);
 }
     
     @Bean 

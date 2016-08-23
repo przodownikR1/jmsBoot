@@ -25,7 +25,7 @@ public class Producer implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 	    send("Sample message");
-		System.out.println("Message was sent to the Queue");
+		log.info("Message was sent to the Queue");
 	}
 	@Scheduled(fixedDelay=2000)
 	public void schedulerSend(){
