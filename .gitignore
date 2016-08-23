@@ -84,3 +84,5 @@ gc.log
 *.log
 *.bat
 *.current
+*gc.log.0.current
+gc.log.0.current
