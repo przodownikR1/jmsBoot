@@ -1,0 +1,44 @@
+buildscript {
+	ext {
+		springBootVersion = '1.4.0.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'spring-boot'
+
+jar {
+	baseName = 'jmsBoot'
+	version = '0.0.1-SNAPSHOT'
+}
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+
+dependencies {
+	compile('org.springframework.boot:spring-boot-starter-activemq')
+	compile('org.springframework.boot:spring-boot-starter-actuator')
+	compile('org.apache.camel:camel-spring-boot-starter:2.17.3')
+	compile('org.springframework.boot:spring-boot-devtools')
+	compile('org.springframework.boot:spring-boot-starter-hateoas')
+	compile('org.projectlombok:lombok')
+	compile('org.springframework.boot:spring-boot-starter-web')
+	
+    compile group: 'org.apache.camel', name: 'camel-jms', version: '2.17.3'
+    
+    
+    compile group: 'org.apache.activemq', name: 'activemq-pool', version: '5.14.0'
+    
+	
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+}
